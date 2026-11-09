@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { transition: background-color .25s ease, color .25s ease; }
+.card-hover { transition: transform .2s ease, box-shadow .2s ease; }
+.card-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(15,23,42,.08); }
+.dark .card-hover:hover { box-shadow: 0 10px 25px -5px rgba(0,0,0,.4); }
+
+main { overflow-wrap: anywhere; }
+
+/* mode terang/gelap untuk kontrol bawaan browser (ikon kalender, scrollbar) */
+html { color-scheme: light; }
+html.dark { color-scheme: dark; }
+input[type="date"]::-webkit-calendar-picker-indicator { cursor: pointer; opacity: 1; }
+
+/* scrollbar tipis, latar transparan */
+.scroll-thin { scrollbar-width: thin; scrollbar-color: rgba(148,163,184,.5) transparent; }
+.scroll-thin::-webkit-scrollbar { width: 8px; background: transparent; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
+.scroll-thin::-webkit-scrollbar-thumb { background: rgba(148,163,184,.45); border-radius: 9999px; }
+.scroll-thin::-webkit-scrollbar-button { display: none; }
